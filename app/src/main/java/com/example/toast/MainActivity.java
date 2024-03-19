@@ -97,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
             eT3.setVisibility(View.VISIBLE);
             btn_eT3.setVisibility(view.VISIBLE);
         }
+        else
+            Toast.makeText(this, "Wrong Input", Toast.LENGTH_SHORT).show();
     }
 
     public void pressed3(View view) {
@@ -113,7 +115,18 @@ public class MainActivity extends AppCompatActivity {
                 iV3.setImageResource(R.drawable.badmark);
 
             reset.setVisibility(view.VISIBLE);
+
+            if(correctAns == 0)
+                Toast.makeText(this, "0% ,0/0", Toast.LENGTH_SHORT).show();
+            else if(correctAns == 1)
+                Toast.makeText(this, "33% ,1/3", Toast.LENGTH_SHORT).show();
+            else if(correctAns == 2)
+                Toast.makeText(this, "66% ,2/3", Toast.LENGTH_SHORT).show();
+            else if(correctAns == 3)
+                Toast.makeText(this, "100% ,3/3", Toast.LENGTH_SHORT).show();
         }
+        else
+            Toast.makeText(this, "Wrong Input", Toast.LENGTH_SHORT).show();
     }
 
     public void resetAction(View view) {
