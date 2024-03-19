@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 public class MainActivity extends AppCompatActivity {
@@ -55,25 +56,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void pressed1(View view) {
         ans = eT1.getText().toString();
-        if(!ans.isEmpty()){
+        if(!ans.isEmpty()) {
             btn_eT1.setClickable(false);
             int ans1 = Integer.parseInt(ans);
             iV1.setVisibility(view.VISIBLE);
-            if(rnd1 + rnd2 == ans1) {
+            if (rnd1 + rnd2 == ans1) {
                 iV1.setImageResource(R.drawable.goodmark);
                 correctAns++;
-            }
-            else
+            } else
                 iV1.setImageResource(R.drawable.badmark);
-            tV3.setText(""+(rnd1 + rnd2));
-            tV4.setText(""+rnd3);
+            tV3.setText("" + (rnd1 + rnd2));
+            tV4.setText("" + rnd3);
 
             tV3.setVisibility(View.VISIBLE);
             tV4.setVisibility(View.VISIBLE);
             eT2.setVisibility(View.VISIBLE);
             btn_eT2.setVisibility(view.VISIBLE);
-
         }
+        else
+            Toast.makeText(this, "Wrong Input", Toast.LENGTH_SHORT).show();
     }
 
     public void pressed2(View view) {
